@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tu Página Web</title>
+</head>
+<body>
+    <!-- Contenedor principal del formulario de búsqueda -->
+    <div class="search-form-container">
+        <form class="search-form-content">
+            <!-- Contenedor del input y botones de búsqueda -->
+            <div class="search-input-wrapper">
+                <!-- Prefijo C:\ -->
+                <div class="search-input-prefix">
+                    C:\ <span></span>
+                </div>
+                <!-- Campo de texto para búsqueda -->
+                <input
+                    type="text"
+                    placeholder="buscar..."
+                    class="search-input-field">
+                    
+                <!-- Botones de navegación -->
+                <button id="home-btn" type="button" class="search-btn search-about-btn">home</button>
+                <button id="contact-btn" type="button" class="search-btn search-contact-btn">contact</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Botón de menú desplegable -->
+    <button class="BTN-menu" id="toggleButton"></button>
+    <div class="dropdown-content" id="dropdownContent">
+        <ul>
+            <li><a href="#">Opción 1</a></li>
+            <li><a href="#">Opción 2</a></li>
+            <li><a href="#">Opción 3</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido del menú desplegable -->
+    <div class="dropdown-content" id="dropdownContent">
+        <ul>
+            <li><a href="#">Opción 1</a></li>
+            <li><a href="#">Opción 2</a></li>
+            <li><a href="#">Opción 3</a></li>
+        </ul>
+    </div>
+
+<!-- Sección de presentación -->
+<section id="presentation" class="presentation-container fade-in">
+    <h2 class="presentation-title">Javier Ortega</h2><br />
+    <p class="presentation-subtitle">Desarrollador Web y Especialista en Ciberseguridad 🌍 💻 🎓</p>
+    <p class="presentation-text">
+        ¡Hola! Soy Javier Ortega, experto en desarrollo web con experiencia en ciberseguridad. A mis 22 años, he trabajado creando y manteniendo sitios web para negocios locales, diseñando soluciones que mejoran su presencia digital y protegen sus sistemas.
+    </p>
+    <p class="presentation-text">
+        Uno de mis logros destacados es la creación de un sistema de control de turnos y facturación para empresas, combinando eficiencia, usabilidad y seguridad en un solo producto. Este proyecto refleja mi capacidad para implementar tecnología actual y aportar valor real a las empresas.
+    </p>
+    
+    <h3 class="technologies-title">Tecnologías en las que destaco</h3>
+    <ul class="technologies-list">
+        <li><strong>Lenguajes y frameworks:</strong> Python, JavaScript, TypeScript, Node.js, Express.js, React.js, Next.js, Django, Tailwind CSS, Bootstrap</li>
+        <li><strong>Bases de datos:</strong> MongoDB, MariaDB, MySQL, PostgreSQL, SQLite, MS-SQL Server</li>
+        <li><strong>Herramientas y plataformas:</strong> Docker, Nginx, GitHub, GitLab, VMware, Oracle VirtualBox</li>
+        <li><strong>Diseño y desarrollo frontend/backend:</strong> HTML, CSS</li>
+    </ul>
+
+    <p class="presentation-text">
+        Actualmente combino mi trabajo freelance con mis estudios, esforzándome por mantenerme al día con las últimas tendencias y tecnologías. Estoy comprometido con transformar ideas en soluciones innovadoras y seguras.
+    </p>
+    <p class="presentation-text">¡Gracias por visitar mi portfolio!</p>
+</section>
+<section id="studies" class="studies-section">
+    <div class="tituSkills">
+        <h2>                   
+            Habilidades 
+        </h2>
+    </div>
+    <div class="logos">
+        <div class="logos-slide">
+            <div class="box-logo">
+                <img src="/assets/angular.png" alt="Angular"/>
+                <p>Angular</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/bootstrap.png" alt="Bootstrap"/>
+                <p>Bootstrap</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/css.png" alt="CSS"/>
+                <p>CSS</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/eclipse.png" alt="Eclipse" style="height: 90px;"/>
+                <p>Eclipse</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/git.png" alt="Git"/>
+                <p>Git</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/mongo.png" alt="MongoDB"/>
+                <p>MongoDB</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/postgre.png" alt="PostgreSQL"/>
+                <p>PostgreSQL</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/tailwind.png" alt="TailwindCSS"/>
+                <p>TailwindCSS</p>
+            </div>
+        </div>
+  
+        <div class="logos-slide">
+            <div class="box-logo">
+                <img src="/assets/nodejs.png" alt="NodeJS"/>
+                <p>NodeJS</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/nginx.png" alt="Nginx"/>
+                <p>Nginx</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/js.png" alt="JavaScript"/>
+                <p>JavaScript</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/html.png" alt="HTML"/>
+                <p>HTML</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/mysql.png" alt="MySQL"/>
+                <p>MySQL</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/piton.png" alt="Python"/>
+                <p>Python</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/typescript.png" alt="TypeScript"/>
+                <p>TypeScript</p>
+            </div>
+            <div class="box-logo">
+                <img src="/assets/wordpress.png" alt="WordPress"/>
+                <p>WordPress</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Script JS -->
+    <script src="/app.js"></script>
+</body>
+</html>

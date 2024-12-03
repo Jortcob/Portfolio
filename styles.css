@@ -1,0 +1,711 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffff66;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative; /* Añadimos posición relativa al body */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent; /* Sin fondo */
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.yellow-a{
+    color: #e7e30c;
+    -webkit-text-stroke: 0.25px black; /* Borde negro */
+}
+.black-a{
+    color:#000000;
+    -webkit-text-stroke: 0.25px white; 
+}
+
+.navbar a {
+    text-decoration: none; 
+    font-size: 25px;
+    padding: 10px;
+
+}
+.navbar a:hover {
+    color: #747206; /* Color del texto al pasar el ratón (opcional) */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    align-items: flex-start; /* Alinea los elementos hacia arriba */
+}
+
+.box{
+    background-color: none;
+    width: 600px;
+    height: 705px;
+    margin-left: 80px;
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7); */
+    flex: 1;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 50%; /* Las cartas ocupan la otra mitad del ancho */
+    margin-left: 100px;
+    margin-top: 150px;
+    flex-wrap: wrap;
+    
+}
+
+.card {
+    background-color: #000000;
+    padding: 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px; /* Controla la altura de las cartas */
+    width: 100%; /* Asegura que las cartas ocupen el 100% del espacio disponible */
+    max-width: 250px; /* Establece un ancho máximo para las cartas */
+    cursor: pointer;
+    flex-grow: 1;
+    position: relative;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    top: calc(4px/ -1);
+    left: calc(4px/ -1);
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 100%), linear-gradient(to top, #ffffff 50%, transparent 50%), linear-gradient(to top, #ffffff 50%, transparent 50%), linear-gradient(to right, #ffffff 0%, #ffffff 100%), linear-gradient(to left, #ffffff 0%, #ffffff 100%);
+    background-size: 100% 4px, 4px 200%, 4px 200%, 0% 4px, 0% 4px;
+    background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    background-repeat: no-repeat, no-repeat;
+    transition: transform 0.2s ease-in-out, background-position 0.2s ease-in-out, background-size 0.2s ease-in-out;
+    transform: scaleX(0) rotate(180deg);
+    transition-delay: 0.4s, 0.2s, 0s;
+}
+
+.card:hover:before {
+    background-size: 200% 4px, 4px 400%, 4px 400%, 55% 4px, 55% 4px;
+    background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+    transform: scaleX(1) rotate(180deg);
+    transition-delay: 0s, 0.2s, 0.4s;
+  }
+
+.card:hover {
+    transform: scale(1.08);
+    transition: transform 0.8s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.card:not(:hover) {
+    transform: scale(1); /* Restaura el tamaño original cuando se quita el ratón */
+    transition: transform 0.8s ease;
+}
+
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.card p {
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 25px;
+}
+.Text-intro{
+    padding-top: 60px;
+    padding-left: 15px; 
+}
+.Pres-h1{
+    font-size: 4em;
+    color: black;
+    text-shadow: 
+        2px 2px 0 #FFF, 
+        -2px -2px 0 #FFF, 
+        2px -2px 0 #FFF, 
+        -2px 2px 0 #FFF, 
+        2px 0 0 #FFF, 
+        -2px 0 0 #FFF, 
+        0 2px 0 #FFF, 
+        0 -2px 0 #FFF;
+}
+
+.intro{
+    font-size: 1.5em;
+    color: #ffffff;
+
+}
+
+.emoji{
+    width: 240px;
+    padding-left: 40px;
+}
+.highlight {
+    color: #ffffff; /* Color del texto */
+    text-shadow: 
+    2px 2px 0 #000000, 
+    -2px -2px 0 #000000, 
+    2px -2px 0 #000000, 
+    -2px 2px 0 #000000, 
+    2px 0 0 #000000, 
+    -2px 0 0 #000000, 
+    0 2px 0 #000000, 
+    0 -2px 0 #000000;
+}
+
+.BTN-menu {
+    background: url('assets/BA_menu.png') no-repeat;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    z-index: 2; /* Aseguramos que el botón esté sobre el desplegable */
+    transition: transform 0.45s ease-in-out;
+}
+
+.BTN-menu:hover {
+    transform: scale(1.2);
+}
+
+.dropdown-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #e0e0e0;
+    transition: width 0.5s ease-in-out;
+    overflow: hidden;
+    z-index: 1; /* Aseguramos que el desplegable esté detrás del botón */
+    border: solid 0.08em black;
+    border-top: none !important;
+    border-bottom: none !important;
+    
+}
+
+.show-dropdown {
+    width: 30%;
+    height: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .navbar {
+        display: none;
+    }
+
+    .Pres-h1 {
+        font-size: 2em;
+    }
+
+    .card {
+        padding: 15px;
+        height: auto;
+    }
+
+    .highlight {
+        font-size: 1.5em;
+    }
+
+    .emoji {
+        max-width: 180px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .cards-container {
+        width: 90%;
+        margin: 10px 0;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+display: none;
+    }
+
+    .navbar a {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .cards-container {
+        width: 90%;
+        margin: 10px 0;
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .Pres-h1 {
+        font-size: 1.5em;
+    }
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.studies-section {
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    min-height: 100vh;
+    
+}
+
+.studies-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#tituProyectos{
+    font-size: 20px;
+}
+
+
+.studies-section p {
+    font-size: 1.2em;
+    max-width: 600px;
+    text-align: center;
+} 
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+} 
+
+.logos {
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+    width: 70%;
+}
+
+.logos:before,
+.logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffff66);
+}
+
+.logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffff66);
+}
+
+.logos:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+    
+}
+
+.box-logo {
+    display: inline-block;
+    padding: 10px;
+    background: #000000;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    width: 150px;
+    height: auto;
+    text-align: center;
+}
+
+.box-logo:hover{
+    transform: scale(1.08);
+    transition: transform 0.8s ease;
+}
+
+.box-logo:not(:hover) {
+    transform: scale(1); /* Restaura el tamaño original cuando se quita el ratón */
+    transition: transform 0.8s ease;
+}
+
+.box-logo:before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    top: calc(4px/ -1);
+    left: calc(4px/ -1);
+    border-radius: 5px;
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 100%), linear-gradient(to top, #ffffff 50%, transparent 50%), linear-gradient(to top, #ffffff 50%, transparent 50%), linear-gradient(to right, #ffffff 0%, #ffffff 100%), linear-gradient(to left, #ffffff 0%, #ffffff 100%);
+    background-size: 100% 4px, 4px 200%, 4px 200%, 0% 4px, 0% 4px;
+    background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    background-repeat: no-repeat, no-repeat;
+    transition: transform 0.2s ease-in-out, background-position 0.2s ease-in-out, background-size 0.2s ease-in-out;
+    transform: scaleX(0) rotate(180deg);
+    transition-delay: 0.4s, 0.2s, 0s;
+}
+
+.box-logo:hover:before {
+    background-size: 200% 4px, 4px 400%, 4px 400%, 55% 4px, 55% 4px;
+    background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+    transform: scaleX(1) rotate(180deg);
+    transition-delay: 0s, 0.2s, 0.4s;
+  }
+
+.logos-slide img {
+    width: 90px;
+    height: auto;
+    display: inline-block;
+}
+.box-logo p {
+    margin-top: 20px; /* Space between image and text */
+    font-size: 19px;
+    color: #ffffff;
+}
+
+
+.tituSkills{
+   text-align: center;
+   margin-bottom: 50px;
+   color: #000;
+}
+
+
+
+.projects-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilos para las cartas */
+.card-pro {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-pro img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-pro p {
+    padding: 10px;
+    margin: 0;
+    background: #fff;
+    color: #000;
+}
+
+/* Efecto hover para las cartas */
+.card-pro:hover {
+    transform: translateY(-10px);
+}
+
+.scroll-down {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-down:hover {
+    background-color: #444;
+}
+
+
+#tituContacto{
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.contact-section{
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    padding-left: 15px; 
+
+}
+
+.contact-container {
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.contact-details{
+    text-align: left;
+}
+
+.contact-details p {
+    margin: 10px 0;
+}
+
+.contact-details a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor principal del formulario de búsqueda */
+.search-form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem; /* mt-10 en Tailwind (2.5rem) */
+}
+
+/* Formulario de búsqueda */
+.search-form-content {
+    width: 100%;
+    max-width: 32rem; /* max-w-lg en Tailwind (32rem) */
+    
+}
+
+/* Contenedor del input y botones de búsqueda */
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem; /* mb-8 en Tailwind (2rem) */
+    border: none;
+    border-top-left-radius: 0.5rem; /* rounded-l-lg en Tailwind */
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; /* rounded-l-lg en Tailwind */
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    
+}
+.search-input-wrapper:hover {
+    transform: scale(1.08);
+    transition: transform 0.5s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+.search-input-wrapper:not(:hover) {
+    transform: scale(1); /* Restaura el tamaño original cuando se quita el ratón */
+    transition: transform 0.8s ease;
+}
+
+/* Prefijo C:\ */
+.search-input-prefix {
+    padding: 0.5rem 1rem; /* px-4 py-2 en Tailwind */
+    background-color: white;
+    color: #4A4A4A; /* text-gray-700 en Tailwind */
+    border-top-left-radius: 0.5rem; /* rounded-l-lg en Tailwind */
+    border-bottom-left-radius: 0.5rem;
+    outline: none;
+    width: 5.5em;
+    display: flex; /* Alinear contenido horizontalmente */
+    align-items: center; /* Alinear contenido verticalmente */
+}
+
+/* Input de búsqueda */
+.search-input-field {
+    width: 100%;
+    padding: 0.5rem 1rem; /* px-4 py-2 en Tailwind */
+    color: #4A4A4A; /* text-gray-700 en Tailwind */
+    outline: none;
+    border: none;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Input con foco (para el efecto de anillo) */
+.search-input-field:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0); /* focus:ring-2 y focus:ring-transparent en Tailwind */
+}
+
+/* Botón de "About" */
+.search-about-btn {
+    padding: 0.5rem 1rem; /* px-4 py-2 en Tailwind */
+    background-color: white;
+    color: black;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón de "About" con hover */
+.search-about-btn:hover {
+    background-color: #4B5563; /* hover:bg-gray-600 en Tailwind */
+}
+
+/* Botón de "contact" */
+.search-contact-btn {
+    padding: 0.5rem 1rem; /* px-4 py-2 en Tailwind */
+    background-color: white;
+    color: black;
+    border: none;
+    border-top-right-radius: 0.5rem; /* rounded-r-lg en Tailwind */
+    border-bottom-right-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón de "contact" con hover */
+.search-contact-btn:hover {
+    background-color: #4B5563; /* hover:bg-gray-600 en Tailwind */
+}
+
+/* Estilo para la sección de presentación */
+.presentation-container {
+    width: 80%;               /* 80% del ancho de la pantalla */
+    max-width: 900px;         /* Ancho máximo de 900px */
+    margin: 0 auto;           /* Centrado horizontal */
+    padding: 20px;            /* Espaciado interno */
+    display: flex;
+    flex-direction: column;   /* Asegura que los elementos dentro se apilen verticalmente */
+    justify-content: flex-start; /* Alineación hacia la parte superior */
+    text-align: left;       /* Centrado horizontal del contenido */
+    max-height: 100vh;        /* No debe exceder el tamaño de la ventana */
+}
+
+/* Título principal de la presentación */
+.presentation-title {
+    font-size: 36px;          /* Tamaño grande */
+    font-weight: bold; 
+    color: #000000;              /* Color gris oscuro */
+    text-align: justify;
+    margin-bottom: 15px;      /* Espacio debajo del título */
+    line-height: 1.2;         /* Espaciado entre líneas */
+    width: 100%;  
+}
+
+/* Subtítulo debajo del título */
+.presentation-subtitle {
+    font-size: 20px;          /* Tamaño mediano */
+    font-weight: bold; 
+    color: #000000;              /* Color gris */
+    text-align: justify;
+    margin-bottom: 20px;      /* Espacio debajo del subtítulo */
+    line-height: 1.4;         /* Mejor separación entre líneas */
+    width: 100%;  
+}
+
+/* Estilo para los párrafos de la presentación */
+.presentation-text {
+    font-size: 18px;          /* Tamaño de fuente adecuado para párrafos */
+    color: #000000;              /* Gris claro */
+    line-height: 1.6;         /* Espaciado entre líneas */
+    margin-bottom: 15px;      /* Espacio inferior entre párrafos */
+    text-align: justify;      /* Justificación de texto */
+    width: 100%;              /* Asegura que el párrafo ocupe todo el ancho */
+}
+
+/* Título para la sección de tecnologías */
+.technologies-title {
+    font-size: 24px;          /* Tamaño de fuente más grande */
+    font-weight: bold; 
+    color: #000000;              /* Gris oscuro */
+    margin-top: 30px;         /* Espacio superior */
+    margin-bottom: 10px;      /* Espacio inferior */
+    text-align: justify;       /* Centrado */
+    width: 100%;  
+}
+
+/* Lista de tecnologías */
+.technologies-list {
+    list-style-type: none;    /* Elimina los puntos de la lista */
+    padding: 0;               /* Elimina el relleno predeterminado */
+    margin: 0;                /* Elimina los márgenes predeterminados */
+    width: 100%;              /* Asegura que ocupe todo el ancho */
+    
+}
+
+/* Elementos de la lista de tecnologías */
+.technologies-list li {
+    font-size: 16px;          /* Tamaño de fuente más pequeño */
+    color: #000000;              /* Gris claro */
+    margin-bottom: 10px;      /* Espacio inferior entre elementos */
+    line-height: 1.5;         /* Aumenta la altura entre las líneas */
+}
+
+/* Para asegurar que el contenido se muestre de manera fluida con espacio */
+.presentation-container > * {
+    margin-bottom: 25px;      /* Espacio entre todos los elementos dentro del contenedor */
+}
+
+
+
