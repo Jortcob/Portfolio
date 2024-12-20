@@ -11,43 +11,47 @@
     <title>Tu Página Web</title>
 </head>
 <body>
-    <div class="search-form-container">
-        <form class="search-form-content">
-            <div class="search-input-wrapper">
-                <div class="search-input-prefix">
-                    C:\ <span></span>
+    <div id="particles-js"></div>
+        <div class="search-form-container">
+            <form class="search-form-content">
+                <div class="search-input-wrapper">
+                    <div class="search-input-prefix">
+                        C:\ <span></span>
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="buscar..."
+                        class="search-input-field">
+                        
+                    <button id="home-btn"
+                        type="button"
+                        class="search-btn search-about-btn">
+                        home
+                    </button>
+                    <button id="about-btn"
+                        type="button"
+                        class="search-btn search-about-btn">
+                        about
+                    </button>
                 </div>
-                <input
-                    type="text"
-                    placeholder="buscar..."
-                    class="search-input-field">
-                    
-                <button id="home-btn"
-                    type="button"
-                    class="search-btn search-about-btn">
-                    home
-                </button>
-                <button id="about-btn"
-                    type="button"
-                    class="search-btn search-about-btn">
-                    about
-                </button>
-            </div>
-        </form>
-    </div>
-    <button class="BTN-menu" id="toggleButton"></button>
-    <div class="dropdown-content" id="dropdownContent">
-        <ul>
-            <li><a href="#">Opción 1</a></li>
-            <li><a href="#">Opción 2</a></li>
-            <li><a href="#">Opción 3</a></li>
-        </ul>
-    </div>
-    <section id="home" class="container">
-    </section>
+            </form>
+        </div>
+        <button class="BTN-menu" id="toggleButton"></button>
+        <div class="dropdown-content" id="dropdownContent">
+            <ul>
+                <li><a href="#">Opción 1</a></li>
+                <li><a href="#">Opción 2</a></li>
+                <li><a href="#">Opción 3</a></li>
+            </ul>
+        </div>
+        <section id="home" class="container">
+        </section>
+
     
     <!-- Scroll Down Button -->
     <button class="scroll-down" onclick="document.getElementById('studies').scrollIntoView({ behavior: 'smooth' });">Ver Estudios</button>
     <script src="/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/particles-config.js"></script>
 </body>
 </html>

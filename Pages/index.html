@@ -11,67 +11,103 @@
     <title>Tu Página Web</title>
 </head>
 <body>
-    <div class="search-form-container">
-        <form class="search-form-content">
-            <div class="search-input-wrapper">
-                <div class="search-input-prefix">
-                    C:\
+    <div id="particles-js"></div>
+        <div class="search-form-container">
+            <form class="search-form-content">
+                <div class="search-input-wrapper">
+                    <div class="search-input-prefix">
+                        C:\
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="buscar..."
+                        class="search-input-field">
+                        
+                    <button id="about-btn"
+                        type="button"
+                        class="search-btn search-about-btn">
+                        about
+                    </button>
+                    <button id="contact-btn"
+                        type="button"
+                        class="search-btn search-contact-btn">
+                        contact
+                    </button>
                 </div>
-                <input
-                    type="text"
-                    placeholder="buscar..."
-                    class="search-input-field">
-                    
-                <button id="about-btn"
-                    type="button"
-                    class="search-btn search-about-btn">
-                    about
-                </button>
-                <button id="contact-btn"
-                    type="button"
-                    class="search-btn search-contact-btn">
-                    contact
-                </button>
-            </div>
-        </form>
-    </div>
-    
-    <button class="BTN-menu" id="toggleButton"></button>
-    <div class="dropdown-content" id="dropdownContent">
-        <ul>
-            <li><a href="#">Opción 1</a></li>
-            <li><a href="#">Opción 2</a></li>
-            <li><a href="#">Opción 3</a></li>
-        </ul>
-    </div>
-    <section id="home" class="container">
-        <div class="box">
-            <div class="Text-intro">
+            </form>
+        </div>
+        <div class="download-btn-container">
+            <a href="/assets/CV-JavierOrtega.pdf" download="Javier_Ortega_CV" class="download-btn">
+                <img src="/assets/cv.png" alt="Icono de descarga" class="download-icon">
+                <h1 class="DesCv">Descargar CV</h1>
+            </a>
+        </div>
+        <button class="BTN-menu" id="toggleButton"></button>
+        <div class="dropdown-content" id="dropdownContent">
+            <ul>
+                <li><a href="#">Opción 1</a></li>
+                <li><a href="#">Opción 2</a></li>
+                <li><a href="#">Opción 3</a></li>
+            </ul>
+        </div>
+        <section id="home" class="container">
+            <div class="box">
+              <div class="Text-intro">
                 <h1 class="Pres-h1">¡Hola a todos, <br><span class="highlight">Soy Javier Ortega</span> <br>Bienvenidos a mi web!</h1>
                 <img class="emoji" src="/assets/EMOJI.jpg" alt="Descripción de la imagen">
+              </div>
             </div>
-        </div>
-        <div class="cards-container">
-            <div class="card">
-                <img src="/assets/web-dev.png" alt="Icono 1" class="icon">
-                <p>Desarrollo Web</p>
+          </section>
+          
+          <section class="terminal">
+            <div class="window">
+              <div class="window-header">
+                <div class="dots">
+                  <div class="window-dot-1"></div>
+                  <div class="window-dot-2"></div>
+                  <div class="window-dot-3"></div>
+                </div>
+                <div class="window-title">Sobre Mí</div>
+              </div>
+              <div class="window-body">
+                <div class="window-body-content">
+                  <span>&gt;</span> Usuario.currentLocation
+                </div>
+                <div class="window-body-info mt-5">"Dos Hermanas, Sevilla, España"</div>
+          
+                <div class="window-body-content mt-25">
+                  <span>&gt;</span> Usuario.contactInfo
+                </div>
+                <div class="window-body-info mt-5">
+                  ["<a href="mailto:tucorreo@example.com">tucorreo@example.com</a>", 
+                  "<a href="https://www.linkedin.com/in/tu-perfil/" target="_blank" rel="noreferrer">LinkedIn</a>", 
+                  "<a href="https://github.com/tuusuario" target="_blank" rel="noreferrer">GitHub</a>"]
+                </div>
+          
+                <div class="window-body-content mt-25">
+                  <span>&gt;</span> Usuario.skills
+                </div>
+                <div class="window-body-info mt-5">
+                  ["HTML", "CSS", "JavaScript", "PHP", "Node.js", "SQL", "Git"]
+                </div>
+          
+                <div class="window-body-content mt-25">
+                  <span>&gt;</span> Usuario.interests
+                </div>
+                <div class="window-body-info mt-5">["Viajar", "Desarrollo Web", "Ciberseguridad"]</div>
+          
+                <div class="window-body-content mt-25 flex">
+                  <span>&gt;</span> <div class="blink text-cursor-light"></div>
+                </div>
+              </div>
             </div>
-            <div class="card">
-                <img src="/assets/base-de-datos.png" alt="Icono 2" class="icon">
-                <p>Administración de Base de Datos</p>
-            </div>
-            <div class="card">
-                <img src="/assets/app.png" alt="Icono 3" class="icon">
-                <p>Desarrollo De Aplicaciones</p>
-            </div>
-            <div class="card">
-                <img src="/assets/estrategia-de-contenido.png" alt="Icono 4" class="icon">
-                <p>Digitalización Empresarial</p>
-            </div>
-        </div>
-    </section>
+          </section>
+          
+          
+
     <!-- Scroll Down Button -->
-    <button class="scroll-down" onclick="document.getElementById('studies').scrollIntoView({ behavior: 'smooth' });">Ver Estudios</button>
     <script src="/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/particles-config.js"></script>
 </body>
 </html>

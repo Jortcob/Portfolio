@@ -6,10 +6,17 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffff66;
+    background: #000000;
+    animation: gradientAnimation 10s ease infinite;
     color: #fff;
     font-family: 'Bebas Neue', sans-serif;
     position: relative; /* Añadimos posición relativa al body */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .navbar {
@@ -72,7 +79,7 @@ body {
 }
 
 .card {
-    background-color: #000000;
+    background-color: #3498db;
     padding: 30px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
     display: flex;
@@ -307,6 +314,7 @@ section {
     flex-direction: column;
     padding: 50px;
     min-height: 100vh;
+    margin-top: 0;
     
 }
 
@@ -336,6 +344,7 @@ section {
 } 
 
 .logos {
+    position: relative;
     overflow: hidden;
     padding: 60px 0;
     white-space: nowrap;
@@ -347,20 +356,9 @@ section {
 .logos:after {
     position: absolute;
     top: 0;
-    width: 250px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-}
-
-.logos:before {
-    left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffff66);
-}
-
-.logos:after {
-    right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffff66);
+    bottom:0;
+    width: 50%;
+    content: '';
 }
 
 .logos:hover .logos-slide {
@@ -370,15 +368,17 @@ section {
 .logos-slide {
     display: inline-block;
     animation: 35s slide infinite linear;
+    width: auto;
     
 }
 
 .box-logo {
+    z-index: 1;
     display: inline-block;
     padding: 10px;
-    background: #000000;
+    background: #00020e;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4);
     margin: 0 10px;
     width: 150px;
     height: auto;
@@ -431,10 +431,11 @@ section {
 }
 
 
+
 .tituSkills{
    text-align: center;
    margin-bottom: 50px;
-   color: #000;
+   color: #ffffff;
 }
 
 
@@ -640,38 +641,42 @@ section {
     justify-content: flex-start; /* Alineación hacia la parte superior */
     text-align: left;       /* Centrado horizontal del contenido */
     max-height: 100vh;        /* No debe exceder el tamaño de la ventana */
+    margin-top: 20px;
 }
 
 /* Título principal de la presentación */
 .presentation-title {
     font-size: 36px;          /* Tamaño grande */
     font-weight: bold; 
-    color: #000000;              /* Color gris oscuro */
+    color: #ffffff;              /* Color gris oscuro */
     text-align: justify;
     margin-bottom: 15px;      /* Espacio debajo del título */
     line-height: 1.2;         /* Espaciado entre líneas */
     width: 100%;  
+    letter-spacing: 0.03em;
 }
 
 /* Subtítulo debajo del título */
 .presentation-subtitle {
     font-size: 20px;          /* Tamaño mediano */
     font-weight: bold; 
-    color: #000000;              /* Color gris */
+    color: #ffffff;              /* Color gris */
     text-align: justify;
     margin-bottom: 20px;      /* Espacio debajo del subtítulo */
-    line-height: 1.4;         /* Mejor separación entre líneas */
+    line-height: 2;         /* Mejor separación entre líneas */
     width: 100%;  
+    letter-spacing: 0.03em;
 }
 
 /* Estilo para los párrafos de la presentación */
 .presentation-text {
     font-size: 18px;          /* Tamaño de fuente adecuado para párrafos */
-    color: #000000;              /* Gris claro */
+    color: #ffffff;              /* Gris claro */
     line-height: 1.6;         /* Espaciado entre líneas */
     margin-bottom: 15px;      /* Espacio inferior entre párrafos */
     text-align: justify;      /* Justificación de texto */
     width: 100%;              /* Asegura que el párrafo ocupe todo el ancho */
+    letter-spacing: 0.03em;
 }
 
 /* Título para la sección de tecnologías */
@@ -707,5 +712,156 @@ section {
     margin-bottom: 25px;      /* Espacio entre todos los elementos dentro del contenedor */
 }
 
+.download-btn-container {
+    display: flex;
+    justify-content: flex-end; /* Mueve el contenido del contenedor a la derecha */
+    padding-right: 150px; /* Opcional: Espaciado interno del contenedor */
+    /* background-color: white; */
+}
 
 
+.download-btn {
+    font-family: 'Bebas Neue', sans-serif;
+    display: flex;
+    flex-direction: column; /* Apila la imagen y el texto verticalmente */
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+.DesCv{
+    color: black;
+    text-shadow: 
+        0.5px 0.5px 0 #FFF, 
+        -0.5px -0.5px 0 #FFF, 
+        0.5px -0.5px 0 #FFF, 
+        -0.5px 0.5px 0 #FFF, 
+        0.5px 0 0 #FFF, 
+        -0.5px 0 0 #FFF, 
+        0 0.5px 0 #FFF, 
+        0 -0.5px 0 #FFF;
+}
+
+/* Estilos para el icono */
+.download-icon {
+    width: 50px;  /* Ajusta el tamaño del icono */
+    height: 50px;
+    margin-bottom: 2px;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden; /* Evitar desbordamientos */
+}
+
+
+
+/* Contenedor de la terminal */
+.terminal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px; /* Ajusta la separación respecto al anterior */
+    padding: 20px;
+  }
+  
+  /* Ventana de terminal */
+  .window {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    width: 600px;
+    font-family: "Courier New", Courier, monospace;
+    color: #cfcfcf;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    border-radius: 8px 8px 0 0;
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .dots {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .window-dot-1, .window-dot-2, .window-dot-3 {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .window-dot-1 {
+    background-color: #ff5f56;
+  }
+  
+  .window-dot-2 {
+    background-color: #ffbd2e;
+  }
+  
+  .window-dot-3 {
+    background-color: #27c93f;
+  }
+  
+  .window-title {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .window-body {
+    padding: 15px;
+  }
+  
+  .window-body-content {
+    margin: 10px 0;
+  }
+  
+  .window-body-info {
+    margin-left: 25px;
+    color: #b3b3b3;
+  }
+  
+  a {
+    color: #6cb4ff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .mt-5 {
+    margin-top: 5px;
+  }
+  
+  .mt-25 {
+    margin-top: 25px;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .blink {
+    width: 10px;
+    height: 20px;
+    background-color: #cfcfcf;
+    animation: blink 1s step-start infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
