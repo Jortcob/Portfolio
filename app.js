@@ -1,13 +1,5 @@
 window.onload = function() {
 
-    // Manejo del menú desplegable
-    var dropdownContent = document.getElementById('dropdownContent');
-    var toggleButton = document.getElementById('toggleButton');
-
-    toggleButton.addEventListener('click', function() {
-        dropdownContent.classList.toggle('show-dropdown');
-    });
-
     // Clonación de logos
     const gallery = document.querySelector('.image-gallery');
     let scrollAmount = 0;
@@ -70,5 +62,34 @@ window.onload = function() {
         }
         
     }
+
+    const terminal = document.getElementById("window-body");
+    const closeDot = document.getElementById("close");
+    const maximizeDot = document.getElementById("maximize");
+    const windowDiv = document.querySelector(".window");
+    const resizeButton = document.getElementById("resize");
+
+ 
+// Cerrar terminal con animación
+closeDot.addEventListener("click", () => {
+    terminal.classList.add("hidden"); // Agrega la clase para iniciar la animación
+    setTimeout(() => {
+      terminal.style.display = "none"; // Esconde completamente el terminal después de la animación
+    }, 500); // El tiempo coincide con la duración de la transición en CSS
+  });
+      
+  
+  // Reabrir terminal (por ejemplo, con el botón maximizar)
+  maximizeDot.addEventListener("click", () => {
+    terminal.style.display = "block"; // Asegúrate de que sea visible
+    setTimeout(() => {
+      terminal.classList.remove("hidden"); // Quita la clase para restaurar el estado original
+    }, 10); // Espera un instante antes de iniciar la transición inversa
+  });
+
+// Alternar tamaño reducido
+resizeButton.addEventListener("click", () => {
+    windowDiv.classList.toggle("resized");
+  });
 
 };

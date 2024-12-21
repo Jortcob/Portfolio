@@ -50,10 +50,18 @@ body {
     color: #747206; /* Color del texto al pasar el ratón (opcional) */
 }
 
-.container {
+.main-layout {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten */
-    align-items: flex-start; /* Alinea los elementos hacia arriba */
+    justify-content: space-around; /* Distribuye el espacio */
+    align-items: flex-start; /* Alinea ambas secciones arriba */
+    margin: 50px 0; /* Espaciado externo superior e inferior */
+}
+
+/* Ajusta las secciones */
+.container, .terminal {
+    flex: 1; /* Las hace crecer proporcionalmente */
+    max-width: 600px; /* Asegura un ancho máximo */
+    margin-right: 80PX;
 }
 
 .box{
@@ -602,6 +610,7 @@ section {
 
 /* Botón de "About" */
 .search-about-btn {
+    width: 140px;
     padding: 0.5rem 1rem; /* px-4 py-2 en Tailwind */
     background-color: white;
     color: black;
@@ -767,91 +776,149 @@ section {
     align-items: flex-start;
     margin-top: 50px; /* Ajusta la separación respecto al anterior */
     padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
   
   /* Ventana de terminal */
   .window {
-    background-color: #1e1e1e;
+    background-color: #1616167e;
+    border: solid 1px #fff;
     border-radius: 8px;
     width: 600px;
     font-family: "Courier New", Courier, monospace;
     color: #cfcfcf;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Oculta contenido que sobresale */
+    transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease, opacity 0.5s ease; /* Transiciones */
+    opacity: 1; /* Estado visible por defecto */
+    transform: translateY(0); /* Posición original */
+  }
+  /* Estado reducido */
+.window.resized {
+    transform: scale(0.7); /* Reduce tamaño proporcional */
+    transform-origin: center center;
+    width: 400px; /* Opcional: Cambiar dimensiones reales */
+    height: 300px; /* Opcional: Cambiar dimensiones reales */
   }
   
   .window-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #ffffff;
     border-radius: 8px 8px 0 0;
     padding: 10px;
-    color: #fff;
-  }
-  
-  .dots {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .window-dot-1, .window-dot-2, .window-dot-3 {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-  
-  .window-dot-1 {
-    background-color: #ff5f56;
-  }
-  
-  .window-dot-2 {
-    background-color: #ffbd2e;
-  }
-  
-  .window-dot-3 {
-    background-color: #27c93f;
-  }
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+    }
+
+    .dots {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      
+      .window-dot-1, .window-dot-2, .window-dot-3 {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      
+      .window-dot-1 {
+        background-color: #ff5f56;
+      }
+      
+      .window-dot-2 {
+        background-color: #ffbd2e;
+      }
+      
+      .window-dot-3 {
+        background-color: #27c93f;
+      }
   
   .window-title {
     flex-grow: 1;
     text-align: center;
+    font-weight: bold;
   }
   
   .window-body {
     padding: 15px;
+    font-size: 16px;
+    overflow-y: auto;
+    display: block; /* Visible por defecto */
+    transition: all 0.3s ease; /* Transiciones suaves */
+    height: 100%; /* Asegura que el contenido ocupe toda la altura del contenedor */
+  }
+  /* Contenido interno del terminal */
+#window-body {
+    transition: opacity 0.5s ease;
   }
   
+.window-body.resized {
+    font-size: 12px; /* Escala proporcional del texto */
+    transform: translateY(0); /* Asegúrate de que esté en posición */
+  }
+
+  .window-body.hidden {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    pointer-events: none; /* Evita interacción */
+    transform: translateY(-100%); /* Desplaza hacia abajo */
+  }
+  .window-body.maximized {
+    width: 100%;
+    height: 450px;
+    transform: translateY(0); /* Asegúrate de que esté en posición */
+  }
+
   .window-body-content {
     margin: 10px 0;
+    color: #ffffff;
+    overflow-y: auto; /* Habilita desplazamiento vertical interno */
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+  }
+  .window-body-content::-webkit-scrollbar {
+    display: none; /* Oculta scrollbar en navegadores basados en WebKit */
   }
   
-  .window-body-info {
+  .window-body-location{
     margin-left: 25px;
-    color: #b3b3b3;
-  }
-  
-  a {
-    color: #6cb4ff;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .mt-5 {
+    color: #ffc956;
     margin-top: 5px;
   }
-  
-  .mt-25 {
+  .window-body-info {
+    margin-left: 25px;
+    color: #ffc956;
+    margin-top: 5px;
+  }
+  .window-body-links{
+    margin-left: 25px;
+    color: #ffc956;
+    margin-top: 5px;
+  }
+  .window-body-links a:hover{
+    text-decoration: underline;
+  }
+  .window-body-content-sub{
+    margin: 10px 0;
+    color: #ffffff;
     margin-top: 25px;
   }
-  
-  .flex {
+  .window-body-content-cur{
+    margin: 10px 0;
+    color: #ffffff;
+    margin-top: 25px;
     display: flex;
     align-items: center;
   }
-  
   .blink {
     width: 10px;
     height: 20px;

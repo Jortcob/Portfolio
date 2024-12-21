@@ -26,82 +26,70 @@
                     <button id="about-btn"
                         type="button"
                         class="search-btn search-about-btn">
-                        about
+                        Sobre Mi
                     </button>
                     <button id="contact-btn"
                         type="button"
                         class="search-btn search-contact-btn">
-                        contact
+                        contacto
                     </button>
                 </div>
             </form>
         </div>
-        <div class="download-btn-container">
-            <a href="/assets/CV-JavierOrtega.pdf" download="Javier_Ortega_CV" class="download-btn">
-                <img src="/assets/cv.png" alt="Icono de descarga" class="download-icon">
-                <h1 class="DesCv">Descargar CV</h1>
-            </a>
-        </div>
-        <button class="BTN-menu" id="toggleButton"></button>
-        <div class="dropdown-content" id="dropdownContent">
-            <ul>
-                <li><a href="#">Opción 1</a></li>
-                <li><a href="#">Opción 2</a></li>
-                <li><a href="#">Opción 3</a></li>
-            </ul>
-        </div>
-        <section id="home" class="container">
-            <div class="box">
-              <div class="Text-intro">
-                <h1 class="Pres-h1">¡Hola a todos, <br><span class="highlight">Soy Javier Ortega</span> <br>Bienvenidos a mi web!</h1>
-                <img class="emoji" src="/assets/EMOJI.jpg" alt="Descripción de la imagen">
+        <div class="main-layout">
+          <section id="home" class="container">
+              <div class="box">
+                  <div class="Text-intro">
+                      <h1 class="Pres-h1">¡Hola a todos, <br><span class="highlight">Soy Javier Ortega</span> <br>Bienvenidos a mi web!</h1>
+                      <img class="emoji" src="/assets/EMOJI.jpg" alt="Descripción de la imagen">
+                  </div>
               </div>
-            </div>
           </section>
           
           <section class="terminal">
-            <div class="window">
-              <div class="window-header">
-                <div class="dots">
-                  <div class="window-dot-1"></div>
-                  <div class="window-dot-2"></div>
-                  <div class="window-dot-3"></div>
-                </div>
-                <div class="window-title">Sobre Mí</div>
+              <div class="window">
+                  <div class="window-header">
+                      <div class="dots">
+                          <div class="window-dot-1"  id="close"></div>
+                          <div class="window-dot-2"  id="resize"></div>
+                          <div class="window-dot-3"  id="maximize"></div>
+                      </div> 
+                      <div class="window-title">SOBRE MI</div>
+                  </div>
+                  <div class="window-body" id="window-body">
+                      <div class="window-body-content">
+                          <span>&gt;</span> Usuario.currentLocation
+                      </div>
+                      <div class="window-body-location">"Dos Hermanas, Sevilla, España"</div>
+      
+                      <div class="window-body-content-sub">
+                          <span>&gt;</span> Usuario.contactInfo
+                      </div>
+                      <div class="window-body-links">
+                          ["<a href="mailto:jortcob@gmail.com">jortcob@gmail.com</a>", 
+                          "<a href="https://www.linkedin.com/in/tu-perfil/" target="_blank" rel="noreferrer">LinkedIn</a>", 
+                          "<a href="https://github.com/tuusuario" target="_blank" rel="noreferrer">GitHub</a>"]
+                      </div>
+      
+                      <div class="window-body-content-sub">
+                          <span>&gt;</span> Usuario.skills
+                      </div>
+                      <div class="window-body-info">
+                          ["HTML", "CSS", "JavaScript", "PHP", "Node.js", "SQL", "Git"]
+                      </div>
+      
+                      <div class="window-body-content-sub">
+                          <span>&gt;</span> Usuario.interests
+                      </div>
+                      <div class="window-body-info">["Viajar", "Desarrollo Web", "Ciberseguridad"]</div>
+      
+                      <div class="window-body-content-cur">
+                          <span>&gt;</span> <div class="blink text-cursor-light"></div>
+                      </div>
+                  </div>
               </div>
-              <div class="window-body">
-                <div class="window-body-content">
-                  <span>&gt;</span> Usuario.currentLocation
-                </div>
-                <div class="window-body-info mt-5">"Dos Hermanas, Sevilla, España"</div>
-          
-                <div class="window-body-content mt-25">
-                  <span>&gt;</span> Usuario.contactInfo
-                </div>
-                <div class="window-body-info mt-5">
-                  ["<a href="mailto:tucorreo@example.com">tucorreo@example.com</a>", 
-                  "<a href="https://www.linkedin.com/in/tu-perfil/" target="_blank" rel="noreferrer">LinkedIn</a>", 
-                  "<a href="https://github.com/tuusuario" target="_blank" rel="noreferrer">GitHub</a>"]
-                </div>
-          
-                <div class="window-body-content mt-25">
-                  <span>&gt;</span> Usuario.skills
-                </div>
-                <div class="window-body-info mt-5">
-                  ["HTML", "CSS", "JavaScript", "PHP", "Node.js", "SQL", "Git"]
-                </div>
-          
-                <div class="window-body-content mt-25">
-                  <span>&gt;</span> Usuario.interests
-                </div>
-                <div class="window-body-info mt-5">["Viajar", "Desarrollo Web", "Ciberseguridad"]</div>
-          
-                <div class="window-body-content mt-25 flex">
-                  <span>&gt;</span> <div class="blink text-cursor-light"></div>
-                </div>
-              </div>
-            </div>
           </section>
+        </div>
           
           
 
