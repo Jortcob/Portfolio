@@ -12,23 +12,81 @@ body {
     font-family: 'Bebas Neue', sans-serif;
     position: relative; /* Añadimos posición relativa al body */
 }
+/* Modo claro */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Estilo para el contenedor de enlaces y botón */
+#header-links-container {
+    display: flex;
+    align-items: right; /* Alinea verticalmente los elementos */
+    justify-content: right;  /* Centra los enlaces horizontalmente */
+    position: relative;
+    top: 0;
+    right: 100px;
+    z-index: 1000;
+    gap: 200px;
+    width: 100%;
+    transition: top 0.3s ease; /* Suaviza el movimiento */
+    padding-top: 30px;
+}
+
+/* Estilo para los enlaces */
+.no-style-link {
+    font-size: 1.1em ;
+    text-decoration: none;  /* Elimina el subrayado */
+}
+
+/* Elimina el estilo de subrayado al pasar el ratón */
+.no-style-link:hover {
+    color: #3498db;  /* Cambia el color del enlace al pasar el ratón */
+}
+
+/* Estilos para el botón de cambio de tema */
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+}
+
+#theme-toggle img {
+    width: 30px;
+    height: 30px;
+    transition: transform 1s ease;
+}
+
+#theme-toggle.light-mode img {
+    transform: rotate(180deg); /* Rotar la imagen cuando el modo es claro */
+}
+
+
+/* Estilo para el icono del sol y la luna */
+#theme-icon {
+    cursor: pointer;
+}
+
+/* Efecto de giro al hacer clic (cuando se presiona) */
+#theme-icon:active {
+    transform: rotate(180deg); /* Gira la imagen */
+}
+
+.rotate-sun {
+    transform: rotate(360deg); /* El sol gira 360 grados en sentido horario */
+}
+
+.rotate-moon {
+    transition: transform 1s ease-in-out; /* Duración de la rotación aumentada a 1 segundo */
+    transform: rotate(-360deg); /* La luna gira 360 grados en sentido antihorario */
+}
 
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: transparent; /* Sin fondo */
-    padding: 10px 0;
-    z-index: 10;
 }
 
 .yellow-a{
@@ -58,114 +116,69 @@ body {
 }
 
 /* Ajusta las secciones */
-.container, .terminal {
+.container {
     flex: 1; /* Las hace crecer proporcionalmente */
-    max-width: 600px; /* Asegura un ancho máximo */
-    margin-right: 80PX;
+    flex-direction: column; /* Los elementos se apilarán verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
 }
 
 .box{
     background-color: none;
     width: 600px;
-    height: 705px;
     margin-left: 80px;
-    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7); */
     flex: 1;
-}
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-    text-align: center;
-    width: 50%; /* Las cartas ocupan la otra mitad del ancho */
-    margin-left: 100px;
-    margin-top: 150px;
-    flex-wrap: wrap;
-    
-}
-
-.card {
-    background-color: #3498db;
-    padding: 30px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 150px; /* Controla la altura de las cartas */
-    width: 100%; /* Asegura que las cartas ocupen el 100% del espacio disponible */
-    max-width: 250px; /* Establece un ancho máximo para las cartas */
-    cursor: pointer;
-    flex-grow: 1;
-    position: relative;
-    margin: 20px;
-    text-decoration: none;
+    flex-direction: column; /* Asegura que los elementos internos estén en columna */
+    justify-content: flex-start; /* Alinea el contenido al inicio */
 }
 
-.card:before {
-    content: "";
-    position: absolute;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    top: calc(4px/ -1);
-    left: calc(4px/ -1);
-    background: linear-gradient(to right, #ffffff 0%, #ffffff 100%), linear-gradient(to top, #ffffff 50%, transparent 50%), linear-gradient(to top, #ffffff 50%, transparent 50%), linear-gradient(to right, #ffffff 0%, #ffffff 100%), linear-gradient(to left, #ffffff 0%, #ffffff 100%);
-    background-size: 100% 4px, 4px 200%, 4px 200%, 0% 4px, 0% 4px;
-    background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
-    background-repeat: no-repeat, no-repeat;
-    transition: transform 0.2s ease-in-out, background-position 0.2s ease-in-out, background-size 0.2s ease-in-out;
-    transform: scaleX(0) rotate(180deg);
-    transition-delay: 0.4s, 0.2s, 0s;
-}
-
-.card:hover:before {
-    background-size: 200% 4px, 4px 400%, 4px 400%, 55% 4px, 55% 4px;
-    background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
-    transform: scaleX(1) rotate(180deg);
-    transition-delay: 0s, 0.2s, 0.4s;
-  }
-
-.card:hover {
-    transform: scale(1.08);
-    transition: transform 0.8s ease;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
-}
-
-.card:not(:hover) {
-    transform: scale(1); /* Restaura el tamaño original cuando se quita el ratón */
-    transition: transform 0.8s ease;
-}
-
-
-.icon {
-    width: 50px;
-    height: 50px;
-}
-
-.card p {
-    color: #ffffff;
-    margin-top: 10px;
-    font-size: 25px;
-}
 .Text-intro{
     padding-top: 60px;
     padding-left: 15px; 
 }
 .Pres-h1{
     font-size: 4em;
-    color: black;
-    text-shadow: 
-        2px 2px 0 #FFF, 
-        -2px -2px 0 #FFF, 
-        2px -2px 0 #FFF, 
-        -2px 2px 0 #FFF, 
-        2px 0 0 #FFF, 
-        -2px 0 0 #FFF, 
-        0 2px 0 #FFF, 
-        0 -2px 0 #FFF;
 }
+.highlight{
+    color:#3498db;
+}
+.typing-effect {
+    font-size: 1.5rem;
+    color: #fcfcfcaf;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 0;
+}
+
+.light-mode .typing-effect #typed-text {
+    color: #000000; /* Cambia a negro cuando el fondo es claro */
+}
+.social-icons {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons .icon {
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    height: 40px;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+}
+
+.social-icons a:hover .icon {
+    filter: grayscale(0%);
+}
+
 
 .intro{
     font-size: 1.5em;
@@ -176,18 +189,6 @@ body {
 .emoji{
     width: 240px;
     padding-left: 40px;
-}
-.highlight {
-    color: #ffffff; /* Color del texto */
-    text-shadow: 
-    2px 2px 0 #000000, 
-    -2px -2px 0 #000000, 
-    2px -2px 0 #000000, 
-    -2px 2px 0 #000000, 
-    2px 0 0 #000000, 
-    -2px 0 0 #000000, 
-    0 2px 0 #000000, 
-    0 -2px 0 #000000;
 }
 
 .BTN-menu {
@@ -774,11 +775,11 @@ section {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 50px; /* Ajusta la separación respecto al anterior */
     padding: 20px;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    margin-top: 60px;
   }
   
   /* Ventana de terminal */

@@ -12,27 +12,14 @@
 </head>
 <body>
     <div id="particles-js"></div>
-        <!-- Contenedor principal del formulario de búsqueda -->
-        <div class="search-form-container">
-            <form class="search-form-content">
-                <!-- Contenedor del input y botones de búsqueda -->
-                <div class="search-input-wrapper">
-                    <!-- Prefijo C:\ -->
-                    <div class="search-input-prefix">
-                        C:\ <span></span>
-                    </div>
-                    <!-- Campo de texto para búsqueda -->
-                    <input
-                        type="text"
-                        placeholder="buscar..."
-                        class="search-input-field">
-                        
-                    <!-- Botones de navegación -->
-                    <button id="home-btn" type="button" class="search-btn search-about-btn">inicio</button>
-                    <button id="contact-btn" type="button" class="search-btn search-contact-btn">contacto</button>
-                </div>
-            </form>
-        </div>
+    <div id="header-links-container">
+        <a href="/Pages/index.html" class="no-style-link">Inicio</a>
+        <a href="/Pages/contact.html" class="no-style-link">Contacto</a>
+
+        <button id="theme-toggle" aria-label="Toggle Theme">
+            <img src="/assets/sunny.png" alt="Sun Icon" id="theme-icon" class="Sun">
+        </button>
+    </div>
         <!-- Sección de presentación -->
         <section id="presentation" class="presentation-container fade-in">
             <h2 class="presentation-title">Javier Ortega</h2><br />
