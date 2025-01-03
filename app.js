@@ -95,46 +95,11 @@ resizeButton.addEventListener("click", () => {
   const typedElement = document.getElementById('typed-text');
     if (typedElement) {
         new Typed('#typed-text', {
-            strings: ["Angular", "NodeJS", "Nginx", "JavaScript", "Python", "TypeScript", "WordPress", "PostgreSQL"],
+            strings: ["Full-Stack Developer", "Cibersecurity Expert", "Front-End Developer", "Back-End Developer"],
             typeSpeed: 100, // Velocidad de tipeo
             backSpeed: 50,  // Velocidad al borrar
             backDelay: 1500, // Pausa antes de borrar
             loop: true // Hacer que se repita indefinidamente
         });
     }
-
-    const themeToggleButton = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    
-    // Verifica el estado del tema al cargar la página
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-        themeIcon.src = '/assets/moon.png'; // Imagen de luna
-        updateLineColor('#000000'); // Líneas negras en modo claro
-    } else {
-        updateLineColor('#ffffff'); // Líneas blancas en modo oscuro
-    }
-    
-    // Cambia el tema cuando se hace clic en el botón
-    themeToggleButton.addEventListener('click', () => {
-        // Alternar entre modos oscuro y claro
-        document.body.classList.toggle('light-mode');
-        
-        // Cambia la imagen del botón y el color de las líneas
-        if (document.body.classList.contains('light-mode')) {
-            themeIcon.src = '/assets/moon.png'; // Imagen de luna
-            themeIcon.classList.remove('rotate-sun'); // Elimina la rotación del sol
-            themeIcon.classList.add('rotate-moon'); // Añade la rotación de la luna
-            localStorage.setItem('theme', 'light'); // Guardar la preferencia del usuario
-            updateLineColor('#000000'); // Líneas negras en modo claro
-        } else {
-            themeIcon.src = '/assets/sunny.png'; // Imagen de sol
-            themeIcon.classList.remove('rotate-moon'); // Elimina la rotación de la luna
-            themeIcon.classList.add('rotate-sun'); // Añade la rotación del sol
-            localStorage.setItem('theme', 'dark'); // Guardar la preferencia del usuario
-            updateLineColor('#ffffff'); // Líneas blancas en modo oscuro
-        }
-    });
-    
-    
 };
